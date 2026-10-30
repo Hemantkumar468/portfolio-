@@ -25,7 +25,7 @@ export interface HealthResponse {
 export const contactApi = createApi({
   reducerPath: "contactApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "/api",
+    baseUrl: import.meta.env.VITE_API_URL || "/api",
   }),
   tagTypes: ["Contact", "Health"],
   endpoints: (builder) => ({
@@ -45,4 +45,3 @@ export const contactApi = createApi({
 });
 
 export const { useSendContactMutation, useGetHealthQuery } = contactApi;
-
