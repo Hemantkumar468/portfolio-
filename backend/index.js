@@ -185,6 +185,11 @@ export async function checkSmtp() {
 
 // 5. Routes
 
+// GET /
+app.get("/", (req, res) => {
+  res.status(200).send("Live is successfully running");
+});
+
 // GET /api/health
 app.get("/api/health", (req, res) => {
   res.status(200).json({
